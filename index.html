@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktív Amőba</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        
+
+
+        <!-- Játéktér -->
+        <div id="game-screen" class="screen active">
+            <div class="header">
+                <button onclick="startGame(3)" class="back-btn">Új játék</button>
+                <div class="turn-indicator">
+                    Következik: <span id="current-player" class="player-x">X csapat</span>
+                </div>
+                <div class="score-board">
+                    <div class="score x-score">X: <span id="score-x">0</span></div>
+                    <div class="score o-score">O: <span id="score-o">0</span></div>
+                </div>
+            </div>
+
+            <div id="board" class="board"></div>
+        </div>
+
+        <!-- Kérdés Modal -->
+        <div id="question-modal" class="modal">
+            <div class="modal-content glass-panel">
+                <h2 id="question-text">Kérdés helye</h2>
+                <div id="options-container" class="options-grid">
+                    <!-- Opciók ide generálódnak -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Eredmény Modal -->
+        <div id="result-modal" class="modal">
+            <div class="modal-content glass-panel">
+                <h2 id="result-message">X csapat nyert!</h2>
+                <div class="menu-buttons">
+                    <button onclick="startGame(3)">Új játék</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
